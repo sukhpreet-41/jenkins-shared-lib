@@ -5,8 +5,12 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
+                script{
+                    
+                    sh 'echo hello world'
+
+                }
                 // demo()
-                sh 'echo hello world'
             }
         }
     }
