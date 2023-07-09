@@ -1,31 +1,16 @@
-// // @Library("")
-// pipeline {
-//     agent any
-
-//     stages {
-//         stage('Hello') {
-//             steps {
-//                 script{
-
-//                     sh "echo hello world"
-
-//                 }
-//                 // demo()
-//             }
-//         }
-//     }
-// }
+@Library("shared-lib")
 pipeline {
     agent any
+
     stages {
-        stage("Clone Git Repository") {
+        stage('Hello') {
             steps {
-                git(
-                    url: "https://github.com/ssbostan/neptune.git",
-                    branch: "main",
-                    changelog: true,
-                    poll: true
-                )
+                // script{
+
+                //     sh "echo hello world"
+
+                // }
+                demo()
             }
         }
     }
