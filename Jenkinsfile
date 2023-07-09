@@ -1,10 +1,12 @@
+@Library("")
 pipeline {
     agent any
 
     stages {
         stage('Hello') {
             steps {
-                demo()
+                // demo()
+                sh 'echo hello world'
             }
         }
     }
