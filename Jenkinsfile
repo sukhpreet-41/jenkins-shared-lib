@@ -3,14 +3,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Git Checkout') {
             steps {
-                // script{
 
-                //     sh "echo hello world"
+                gitCheckout()
+            }
+        }
 
-                // }
-                demo()
+        stage('Building Artifact') {
+            steps {
+
+                artifactBuild()
             }
         }
     }
