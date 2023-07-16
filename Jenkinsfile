@@ -13,7 +13,6 @@ pipeline {
             steps {
 
                 gitCheckout()
-                sh "cd GthubActions"
             }
         }
 

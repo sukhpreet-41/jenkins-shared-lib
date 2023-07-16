@@ -1,3 +1,3 @@
 def call(){
-    sh "mvn clean install"
+    sh "mvn -f GthubActions/pom.xml clean install"
 }
