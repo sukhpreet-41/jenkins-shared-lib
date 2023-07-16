@@ -1,6 +1,13 @@
 @Library("shared-lib") _
 pipeline {
     agent any
+    environment {
+        DOCKERHUB_USERNAME = "sukhpreet2002"
+        APP_NAME = "spring-app"
+        IMAGE_TAG = "${BUILD_NUMBER}"
+        IMAGE_NAME = "${DOCKERHUB_USERNAME}" + "/" + "${APP_NAME}"
+        REGISTRY_CREDS = 'dockerhub'
+    }
         
     stages {
         stage('clean workspace') {
@@ -38,9 +45,9 @@ pipeline {
 
         stage('push Docker image') {
             steps {
-                withDockerRegistry(credentialsId: 'dockerhub', url: 'https://hub.docker.com/') {
+                withDockerRegistry(credentialsId: 'dockerhub', url: 'https://registry.hub.docker.com/') {
 
-                    sh "sh docker push spring-app:latest"
+                    sh "sh docker push sukhpreet2002/spring-app:latest"
     // some block
                 }
             }
