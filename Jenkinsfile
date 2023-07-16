@@ -45,11 +45,9 @@ pipeline {
 
         stage('push Docker image') {
             steps {
-                script{
-                    dockerPush()
-                }
+                dockerPush()
+
                 
-                }
             }
         }
 
