@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Building Dcoker image') {
             steps {
-
+                sh "sleep(10)"
                 dockerImageBuild()
             }
         }
