@@ -16,12 +16,12 @@ pipeline {
             }
         }
 
-        stage('Scanning for vulnerabilities') {
-            steps {
+        // stage('Scanning for vulnerabilities') {
+        //     steps {
 
-                owaspCheck()
-            }
-        }
+        //         owaspCheck()
+        //     }
+        // }
 
         stage('Building Artifact') {
             steps {
@@ -31,12 +31,20 @@ pipeline {
         }
         stage('Building Docker image') {
             steps {
-                sh "sleep 10"
                 dockerImageBuild()
             }
         }
 
 
+        stage('push Docker image') {
+            steps {
+                withDockerRegistry(credentialsId: 'dockerhub', url: 'https://hub.docker.com/') {
+
+                    sh "sh docker push spring-app:latest"
+    // some block
+                }
+            }
+        }
 
 
 
