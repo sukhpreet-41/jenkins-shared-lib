@@ -48,7 +48,7 @@ pipeline {
                 script{
                     withDockerRegistry(credentialsId: 'dockerhub', url: 'https://registry.hub.docker.com/') {
 
-                    sh "sh docker push sukhpreet2002/spring-app"
+                    sh "docker push sukhpreet2002/spring-app"
                 }
                 
     // some block
