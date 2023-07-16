@@ -1,4 +1,4 @@
 def call(){
-    sh "git clone https://github.com/sukhpreet-41/GthubActions.git "
+    sh "https://github.com/sukhpreet-41/spring_maven_app.git "
     // sh "cd GthubActions"
 }

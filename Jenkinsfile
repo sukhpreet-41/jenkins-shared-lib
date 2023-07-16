@@ -22,5 +22,18 @@ pipeline {
                 artifactBuild()
             }
         }
+        stage('Building Dcoker image') {
+            steps {
+
+                dockerImageBuild()
+            }
+        }
+
+
+
+
+
+
+
     }
 }
