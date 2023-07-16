@@ -45,9 +45,12 @@ pipeline {
 
         stage('push Docker image') {
             steps {
-                withDockerRegistry(credentialsId: 'dockerhub', url: 'https://registry.hub.docker.com/') {
+                script{
+                    withDockerRegistry(credentialsId: 'dockerhub', url: 'https://registry.hub.docker.com/') {
 
                     sh "sh docker push sukhpreet2002/spring-app"
+                }
+                
     // some block
                 }
             }
