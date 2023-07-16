@@ -42,7 +42,14 @@ pipeline {
             }
         }
 
+        stage('Scan Docker image (trivy)') {
+            steps {
+                imageScan()
 
+                
+            }
+        }
+        
         stage('push Docker image') {
             steps {
                 dockerPush()
