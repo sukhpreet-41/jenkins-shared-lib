@@ -16,13 +16,20 @@ pipeline {
             }
         }
 
+        stage('Scanning for vulnerabilities') {
+            steps {
+
+                owaspCheck()
+            }
+        }
+
         stage('Building Artifact') {
             steps {
 
                 artifactBuild()
             }
         }
-        stage('Building Dcoker image') {
+        stage('Building Docker image') {
             steps {
                 sh "sleep 10"
                 dockerImageBuild()
