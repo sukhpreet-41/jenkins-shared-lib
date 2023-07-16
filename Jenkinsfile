@@ -47,7 +47,6 @@ pipeline {
             steps {
                 script{
                     withDockerRegistry(credentialsId: 'dockerhub', url: 'https://registry.hub.docker.com/') {
-                    sh "docker login"
                     sh "docker push sukhpreet2002/spring-app:latest"
                 }
                 
