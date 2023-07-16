@@ -1,3 +1,3 @@
 def call(){
-    sh "docker build -t spring-app ./GthubActions/"
+    sh "docker build -t sukhpreet2002/spring-app ./GthubActions/"
 }
